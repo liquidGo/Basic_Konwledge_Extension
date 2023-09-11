@@ -1,2 +1,2 @@
 ### WECHAT-IMG
-<img style="width:100vw" src="./common/weixin.png"/>
+<img style="width:30%" src="./common/weixin.png"/>
