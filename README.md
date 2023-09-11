@@ -3,4 +3,7 @@
   
 <u>这是一个由浅入深的系统性整理，主要以基础展开到源码分析、组件封装的博客。</u>
 
-更新中，你也可以case到[微信](common/weixin.png)
+**每一个分类都会从⭐-⭐⭐⭐⭐⭐进行分类，如果正在准备面试，你可以尝试从最重要的部分下手**
+
+Send questions to [WeChat](./IMG.md#wechat-img)。  
+<img style="width:100vw" src="./common/respect.jpg"/>
