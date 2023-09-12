@@ -6,4 +6,4 @@
 **每一个分类都会从⭐-⭐⭐⭐⭐⭐进行分类，如果正在准备面试，你可以尝试从最重要的部分下手**
 
 Send questions to [WeChat](./IMG.md#wechat-img)。  
-<img style="width:30%" src="./common/respect.jpg"/>
+<img style="width:30%" src="http://24k.live/common/github/respect.jpg"/>
