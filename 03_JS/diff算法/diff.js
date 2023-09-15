@@ -1,6 +1,9 @@
-import { DOM_TYPE } from './constants'
+const DOM_TYPE = {
+    ATTRS: "ATTRS",
+    TEXT: "TEXT"
+}
 
-// TODO 未使用递归
+// TODO 为写入层级递归
 const diff = (oldTree, newTree) => {
     const patches = {};
     let index = 0;
@@ -8,10 +11,24 @@ const diff = (oldTree, newTree) => {
     walk(oldTree, newTree, index, patches);
     return patches;
 
+
 }
+
+const isString = (node) => {
+    return Object.prototype.toString.call(node) === "[object String]"
+}
+
 const walk = (oldNode, newNode, index, patches) => {
-    const currentPath = []
-    if (oldNode.type === newNode.type) {
+    const currentPath = [];
+    // TODO 判断是否为字符节点
+    if (isString(oldNode) && isString(newNode)) {
+        if (oldNode !== newNode) {
+            currentPath.push({
+                type: DOM_TYPE.TEXT,
+                text: newNode
+            })
+        }
+    } else if (oldNode.type === newNode.type) {
         const attrs = diffArr(oldNode.props, newNode.props)
         if (Object.keys(attrs).length > 0) {
             currentPath.push({
@@ -27,7 +44,7 @@ const walk = (oldNode, newNode, index, patches) => {
 
 
 const diffArr = (oldAttrs, newAttrs) => {
-    
+
     const patch = {};
 
     for (let key in oldAttrs) {

@@ -7,3 +7,9 @@
 
 Send questions to [WeChat](./IMG.md#wechat-img)。  
 <img style="width:30%" src="http://24k.live/common/github/respect.jpg"/>
+
+## 工具介绍
+
+**本文中所有的流程图由VSCODE插件绘制**
+
+> 插件是[text to flowchart](https://github.com/hrhr49/tefcha#readme)，可以将while循环转换成流程图。

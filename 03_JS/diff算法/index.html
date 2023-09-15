@@ -2,42 +2,57 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>diff算法</title>
 </head>
 
 <body>
     <div id="body"></div>
-    <script src="./element.js">
-    </script>
-    <script src="./diff.js">
-    </script>
+    <script src="./element.js"></script>
+    <script src="./diff.js"></script>
     <script>
-        const body = document.getElementById('body')
+        const body = document.getElementById("body");
         const vdom = createElement("div", {}, [
-            createElement("div", {
-                class: "red"
-            }, ["测试"]),
-            createElement("div", {
-                class: "red"
-            }, ["测试"]),
-        ])
-        const vdom2 = createElement("div", {}, [
-            createElement("div", {
-                
-                class: "red"
-            }, ["测试"]),
-            createElement("div", {
-                class: "red"
-            }, ["test"]),
-        ])
+            createElement(
+                "div",
+                {
+                    class: "red",
+                },
+                ["测试"]
+            ),
+            createElement(
+                "div",
+                {
+                    class: "red",
+                },
+                ["测试"]
+            ),
+        ]);
+        const vdom2 = createElement("div", {class:"red"}, [
+            createElement(
+                "div",
+                {
+                    class: "red",
+                },
+                ["测试"]
+            ),
+            createElement(
+                "li",
+                {
+                    class: "blue",
+                },
+                ["test"]
+            ),
+        ]);
 
-        // const patches = diff(vdom, vdom2)
-        
-        const el = render(vdom)
-        
-        renderDom(el, body)
+
+        // TODO 实现diff算法比较后的vdom
+        const patches = diff(vdom, vdom2)
+
+        const el = render(vdom);
+
+        renderDom(el, body);
     </script>
 </body>
 
