@@ -1,17 +1,23 @@
 const DOM_TYPE = {
     ATTRS: "ATTRS",
-    TEXT: "TEXT"
+    TEXT: "TEXT",
+    REMOVE: "REMOVE",
+    REPLACE: "REPLACE"
 }
+let INDEX = 0;
 
-// TODO 为写入层级递归
 const diff = (oldTree, newTree) => {
     const patches = {};
-    let index = 0;
 
-    walk(oldTree, newTree, index, patches);
+    walk(oldTree, newTree, INDEX, patches);
     return patches;
+}
 
+const diffChildren = (oldNode, newNode, patches) => {
 
+    oldNode.forEach((v, i) => {
+        walk(v, newNode[i], ++INDEX , patches);
+    })
 }
 
 const isString = (node) => {
@@ -20,14 +26,20 @@ const isString = (node) => {
 
 const walk = (oldNode, newNode, index, patches) => {
     const currentPath = [];
-    // TODO 判断是否为字符节点
-    if (isString(oldNode) && isString(newNode)) {
+    if (!newNode) {
+        currentPath.push({
+            type: DOM_TYPE.REMOVE,
+            index
+        })
+    } else if (isString(oldNode) && isString(newNode)) {
+
         if (oldNode !== newNode) {
             currentPath.push({
                 type: DOM_TYPE.TEXT,
                 text: newNode
             })
         }
+
     } else if (oldNode.type === newNode.type) {
         const attrs = diffArr(oldNode.props, newNode.props)
         if (Object.keys(attrs).length > 0) {
@@ -36,9 +48,18 @@ const walk = (oldNode, newNode, index, patches) => {
                 attrs
             })
         }
-        if (currentPath.length > 0) {
-            patches[index] = currentPath
-        }
+        diffChildren(oldNode.children, newNode.children, patches);
+    } else {
+        currentPath.push({
+            type: DOM_TYPE.REPLACE,
+            newNode
+        })
+    }
+    
+
+    if (currentPath.length > 0) {
+        patches[index] = currentPath
+
     }
 }
 
