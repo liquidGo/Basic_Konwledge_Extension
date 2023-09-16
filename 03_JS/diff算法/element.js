@@ -7,6 +7,7 @@ class Element {
 }
 
 const setAttr = (node, key, value) => {
+    if (typeof node === 'string') return;
     switch (key) {
         case "value":
             if (node.tagName.toUpperCase() === "INPUT" ||

@@ -11,7 +11,17 @@
     <div id="body"></div>
     <script src="./element.js"></script>
     <script src="./diff.js"></script>
+    <script src="./patch.js"></script>
     <script>
+        window.onload = () => {
+            sessionStorage.clear()
+        }
+        function change() {
+            sessionStorage.setItem('visible', true)
+            location.reload()
+        }
+
+        var visible = sessionStorage.visible;
         const body = document.getElementById("body");
         const vdom = createElement("div", {}, [
             createElement(
@@ -19,41 +29,48 @@
                 {
                     class: "red",
                 },
-                ["测试"]
+                ["text node"]
             ),
             createElement(
                 "div",
                 {
                     class: "red",
                 },
-                ["测试"]
+                ["text node 2"]
             ),
         ]);
-        const vdom2 = createElement("div", {class:"red"}, [
+        const vdom2 = createElement("div", {}, [
             createElement(
                 "div",
                 {
                     class: "red",
                 },
-                ["测试"]
+                ["文本节点"]
             ),
             createElement(
-                "li",
+                "div",
                 {
                     class: "blue",
                 },
-                ["test"]
+                ["文本节点2"]
             ),
         ]);
 
-
-        // TODO 实现diff算法比较后的vdom
-        const patches = diff(vdom, vdom2)
-
         const el = render(vdom);
 
+        // TODO 演示开关
+        if (visible) {
+            const patches = diff(vdom, vdom2);     
+            console.log("%c Line:64 🍌 补丁包", "color:#7f2b82", patches);
+
+            patch(el, patches);
+        }
+
         renderDom(el, body);
+
+
     </script>
+    <button onclick="change()">点击查看算法执行流程</button>
 </body>
 
 </html>
