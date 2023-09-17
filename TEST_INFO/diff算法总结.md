@@ -90,5 +90,12 @@ if 当前元素存在补丁打入补丁
         case REMOVE
             node.parentNode.removeChild(node)
 插入到#root顶层真实元素中
+```
 
+```tefcha
+比较流程
+state更新后会自动调用createElement新旧虚拟dom
+通过diff比较新旧虚拟dom得到补丁
+patch方法传入旧真实dom，使用补丁包进行dom元素的修改
+append追加到页面上
 ```
