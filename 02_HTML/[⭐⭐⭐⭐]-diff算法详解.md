@@ -7,13 +7,11 @@
 - diff 算法应用场景？
 - 如何实现 diff 算法？
 
-### 要素
-
 ### 总结
 
 #### 什么是虚拟 dom？
 
-    用JS对象模拟DOM中的节点，再通过特定的render函数渲染成真实的节点。
+> 用JS对象模拟DOM中的节点，再通过特定的render函数渲染成真实的节点。
 
 <img style="width:100vw;" src="http://24k.live/common/github/html/dom.png"/>
 
