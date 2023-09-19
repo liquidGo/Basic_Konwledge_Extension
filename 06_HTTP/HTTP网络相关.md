@@ -49,25 +49,7 @@
 物理层：网关会找到ip和mac地址
 ```
 
-
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-</head>
-
-<body>
-  <div class="tefcha">
-# This is a example.
-# NOTE:
-#   The line starts with "#" is comment.
-#   "\n" is newline.
-#   All indent must be "  " (2 white spaces).
-
-Start\nFizzBuzz!
-i = 1
-
+```tefcha
 while i <= 100
   if i % 15 == 0
     print("FizzBuzz")
@@ -79,11 +61,5 @@ while i <= 100
     print(i)
   i = i + 1
 End
-  </div>
-  <script src="https://unpkg.com/tefcha/umd/tefcha.js"></script>
-  <script>
-    tefcha.initialize();
-  </script>
-</body>
 
-</html>
+```
