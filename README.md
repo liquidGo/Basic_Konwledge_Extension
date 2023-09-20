@@ -10,7 +10,7 @@ Send questions to [WeChat](./IMG.md#wechat-img)。
 
 ## 工具介绍
 
-**本文中所有的流程图由VSCODE插件绘制**
+**本文中所有的流程图由VSCODE插件绘制，建议先clone到VSCODE，配合Markdown All in one/Tefcha插件查看Markdown**
 
 > 插件是[text to flowchart](https://github.com/hrhr49/tefcha#readme)，可以将while循环转换成流程图。
 > [在线Text to Flowchart编辑器](https://hrhr49.github.io/tefcha/demo/)
