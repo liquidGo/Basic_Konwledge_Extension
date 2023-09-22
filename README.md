@@ -8,9 +8,5 @@
 Send questions to [WeChat](./IMG.md#wechat-img)。  
 <img style="width:30%" src="http://24k.live/common/github/respect.jpg"/>
 
-## 工具介绍
-
-**本文中所有的流程图由VSCODE插件绘制，建议先clone到VSCODE，配合Markdown All in one/Tefcha插件查看Markdown**
-
-> 插件是[text to flowchart](https://github.com/hrhr49/tefcha#readme)，可以将while循环转换成流程图。
-> [在线Text to Flowchart编辑器](https://hrhr49.github.io/tefcha/demo/)
+## 全局要点
+- change log非常重要，可以从中了解到框架的发展历程，以及框架的重大变化。这可以让你更专业。
