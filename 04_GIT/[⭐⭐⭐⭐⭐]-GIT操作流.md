@@ -20,3 +20,7 @@
     二、恢复暂收手动删除：  
         git stash apply <stash-name>
         git stash drop <stash-name>
+
+### 本地库强制关联远程库
+1. git push origin master --allow-unrelated-histories：强制关联远程库
+2. git push origin master -f：强制推送到远程库
