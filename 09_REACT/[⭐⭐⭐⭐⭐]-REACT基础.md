@@ -46,6 +46,25 @@ stateDiagram-v2
 ```
 
 ### 总结
+1. 了解REACT
+    - 什么是REACT？
+        > REACT是一个用于构建用户界面的JavaScript库。  
+        > &nbsp;&nbsp;&nbsp;&nbsp;起初是facebook为了解决内部开发中遇到的两个问题：大量操作真实DOM、数据流混乱。  
+        > &nbsp;&nbsp;&nbsp;&nbsp;于是，facebook调研后开发了react框架，于13年五月开源，国内16年开始流行。
+    - REACT优点？
+      - 不直接操作真实DOM而是操作虚拟DOM，提高性能
+      - 数据流单向，提高代码可读性
+      - 组件化开发，提高代码复用性
+      - 丰富的生命周期，提供更多的钩子函数
+      - 丰富的插件，提供更多的功能
+      - diff算法，更少的操作真实DOM
+    - REACT重要change迭代？
+2. 使用REACT
+=======
+    显示页面 --> [*]
+```
+
+### 总结
 
 #### 总结流程
 
@@ -69,25 +88,35 @@ flowchart TB
      - diff 算法，更少的操作真实 DOM
    - REACT 重要 change 迭代？
 
-     - 虚拟 DOM 的 diff 算法由递归渲染改为 fiber 渲染(React16.0 将树结构改为链表结构)
-     - 16.0 以前：深度优先递归渲染，
+    1. fiber 渲染
+        - 虚拟 DOM 的 diff 算法由递归渲染改为 fiber 渲染(React16.0 将树结构改为链表结构)
 
-       > 一旦开始渲染，就会一直执行到结束
+        - 16.0 以前：深度优先递归渲染，
+            > Reconciler通过key值找到变化组件并将真实DOM转为虚拟DOM，diff算法比较虚拟DOM并且打补丁最后使用Renderer渲染真实DOM
 
-       > 大量组件实例存在时，执行效率变低
+        > 一旦开始渲染，就会一直执行到结束
 
-       > 用户交互动画效果，出现页面卡顿
+        > 大量组件实例存在时，执行效率变低
 
-     - 16.0 以后：fiber 渲染（整体调度的统称）
+        > 用户交互动画效果，出现页面卡顿
 
-       > 利用浏览器空闲时间执行，不会占用主线程。  
-       > 浏览器 API：requestIdleCallback：利用浏览器空闲时间执行任务，可以设置优先级。
+        - 16.0 以后：fiber 渲染（整体调度的统称）
 
-       > 将 diff 更新 dom 操作碎片化
+            > 增加了Scheduler调度器，也是fiber的核心，当页面变化后会使用Reconciler找到变化后，通过Scheduler调度器在浏览器空闲时间中进行虚拟DOM的可暂停的打标，由effectTag形成effectList，打标以后交由Renderer更新打标的DOM。
 
-       > 碎片化任务，可以根据需要中断、继续、重新启动
+        > 利用浏览器空闲时间执行，不会占用主线程。  
+        > 浏览器 API：requestIdleCallback：利用浏览器空闲时间执行任务，可以设置优先级。
 
-1. 使用 REACT
+        > 将 diff 更新 dom 操作碎片化
+
+        > 碎片化任务，可以根据需要中断、继续、重新启动
+    2. 生命周期
+        > 16.0以前：挂载前后、是否更新、更新前后、卸载
+        > 16.0以后: 删除了will系列，会影响vdom链表结构的渲染，保留了shouldComponentUpdate
+2. 使用 REACT
+   1. 组件优化？
+        > 手动优化：shouldComponentUpdate、PureComponent、React.memo
+        > 自动优化：React.lazy、React.Suspense
 
 #### 细分流程图
 
@@ -102,6 +131,7 @@ stateDiagram
     下一帧调度 --> 主线程调度: 判断当前帧剩余时间
     主线程调度 --> [*]
 ```
+
 
 ```mermaid
 ---
@@ -133,3 +163,9 @@ function myNonEssentialWork (deadline) {
 }
 ```
 
+```mermaid
+---
+title: 生命周期
+--- 
+```
+>>>>>>> 03_JS
