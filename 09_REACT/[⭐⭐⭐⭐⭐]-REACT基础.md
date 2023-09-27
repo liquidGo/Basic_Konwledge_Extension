@@ -28,7 +28,7 @@ mindmap
 timeline
     title 以往经验中寻找规律
     了解框架 : 框架起源 : 框架迭代 : 现今发展
-    渲染过程 : 使用框架 : 虚拟DOM : 状态保存: 框架优化 : 渲染页面 : 显示页面 : 页面交互（路由跳转、事件绑定、组件通信等）
+    渲染过程 : 使用框架 : 虚拟DOM : 数据流: 框架优化 : 渲染页面 : 显示页面 : 页面交互（路由跳转、事件绑定、组件通信等）
 ```
 
 ### 抽象
@@ -63,6 +63,15 @@ flowchart TB
     - REACT 优点？
       - 不直接操作真实 DOM 而是操作虚拟 DOM，提高性能
       - 数据流单向，提高代码可读性
+        1. flex？
+           > 交互  
+           > 分发器传递给 store  
+           > 订阅 store 的组件，改变 state 到 UI
+        2. redux？
+           > 单一数据源，所有 state 储存在一个 store 中  
+           > state 只读，只能通过 dispatch action 改变
+           > action-->reducer-->store-->UI
+           > redux 本身不支持异步的 action,redux-saga/thunk 等异步中间件的原理就是判断 action 是否为函数，是就传入 dispatch 和 getState，不是就直接交由 reducer
       - 组件化开发，提高代码复用性
       - 丰富的生命周期，提供更多的钩子函数
       - 丰富的插件，提供更多的功能
@@ -96,13 +105,58 @@ flowchart TB
             > 碎片化任务，可以根据需要中断、继续、重新启动
 
       2.  生命周期
-          > 16.0 以前：挂载前后、是否更新、更新前后、卸载
+
+          > 16.0 以前：挂载前后、是否更新、更新前后、卸载  
           > 16.0 以后: 删除了 will 系列，会影响 vdom 链表结构的渲染，保留了 shouldComponentUpdate
 
 2.  使用 REACT
+
     1. 组件优化？
-       > 手动优化：shouldComponentUpdate、PureComponent、React.memo
+
+       > 手动优化：shouldComponentUpdate、PureComponent、React.memo  
        > 自动优化：React.lazy、React.Suspense
+
+    2. hooks
+
+       > 解决组件之间的复用状态逻辑很难，需要借用第三方库
+
+       > 解决复杂组件难以理解
+
+
+       - 为什么 hooks 不能在循环、条件、嵌套函数中使用？
+
+         > hooks 是根据数组的顺序存储 state 的，如果在循环中使用，前置 useState 不调用会导致顺序混乱，无法确定当前的 hooks 是哪一个
+
+       - 为什么函数组件会执行两次？为了定位错误
+
+       - useEffect 两种情况:
+         1. 传入空数组，只执行一次
+         2. 传入数组，数组中的值发生变化，执行一次
+       - useLayoutEffect 和 useEffect 的区别？
+         > useLayoutEffect 会在浏览器渲染之前执行，useEffect 会在浏览器渲染之后执行，useEffect 为异步，useLayoutEffect 为同步
+       - useMemo
+         > 传入一个函数和依赖项，返回一个值，当依赖项发生变化时，重新计算值  
+         > 比如一个对象，性别不改变，只改变姓名，可以监听姓名这个 state
+       - useCallback
+         > 前提是组件的 props/state 发生改变以后就会渲染整个组件，useCallback 就可以针对子组件的 reRender 进行优化，只有当依赖项发生改变时，才会重新渲染子组件，父组件中不相关的 state 发生变化也不会重新分配函数地址，配合 memo 使用
+       - useRef
+
+         > class 组件可以获取到子组件的实例，函数组件没有实例需要使用 useRef 进行实例的一个挂载。
+
+       - useReducer
+
+         > 对复杂的 state 进行管理，聚合 state 通过 reducer 函数+dispatch 进行改变状态
+
+       - useContext
+
+         > 通过顶层组件向下传递的方式，可以在任意子组件中获取到顶层组件的上下文，一般用于移动端等小型的项目中
+
+         > 可以配合 useReducer 作为一个小型的 redux 使用。
+
+       - use 自定义 HOOK
+         > 通过 use 开头的函数，可以自定义一个 HOOK，可以将一些逻辑进行封装，方便复用
+
+         > 通过闭包进行实现，返回指定的值，可以在自定义hook中写入useEffect等钩子函数
 
 #### 细分流程图
 

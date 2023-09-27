@@ -12,3 +12,5 @@ Send questions to [WeChat](./IMG.md#wechat-img)。
 - change log非常重要，可以从中了解到框架的发展历程，以及框架的重大变化。这可以让你更专业。
 
 - 描述要精准，越精准越专业，越多越不专业。
+
+- 多讨论而不要自我肯定。
