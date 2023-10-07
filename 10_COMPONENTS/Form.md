@@ -25,6 +25,9 @@ Form
 
 ### 主流程抽象
 ```mermaid
+---
+title: 主流程抽象
+---
 stateDiagram-v2
 Form-->form的实例: 新建一个Form的类new Form
 form的实例-->对父组件暴露: forwardRef useImperativeHandle
@@ -36,13 +39,16 @@ form的实例-->对父组件暴露: forwardRef useImperativeHandle
 ```
 
 ```mermaid
+---
+title: 简化抽象
+---
 stateDiagram-v2
 学习顺序-->useForm类: 核心是new useForm类返回ref对象
 useForm类-->context: 父组件传递context 
 context-->父组件
 父组件-->子组件
 ```
-
+#### useForm类
 ```mermaid
 ---
 title: useForm类
@@ -50,5 +56,17 @@ title: useForm类
 stateDiagram-v2
 type-->属性
 属性-->如何存入store
+```
+
+```mermaid
+---
+title: useForm类-type
+---
+mindmap
+types.ts
+    Form
+    FormItem实例
+    store
+    callback
 ```
 
