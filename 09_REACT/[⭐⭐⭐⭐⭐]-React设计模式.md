@@ -17,8 +17,55 @@
     ```mermaid
     flowchart TB
       RenderProps--导出value/onChange(action)-->1[StateReducer]
-      1--有传入Reducer-->Reducer拦截并改变State进行更新
+      1--有传入Reducer-->Reducer拦截并写入一些兜底判断保留或者其他处理State的逻辑
       1--无传入Reducer-->直接更新默认的action到State
+    ```
+    - 简单小案例：RenderProps每次+2，Reducer当大于等于20的时候作出拦截逻辑
+    ```
+      const addReducer = (state, action) => {
+        switch (action.type) {
+          case "add":
+            let index = state.index >= 20 ? 0 : action.index;
+            return { ...state, index };
+        }
+      };
+
+      const ChildrenComponent = (p) => {
+        const props = { addReducer: (state, action) => action, ...p };
+        const [index, setIndex] = useState({ index: 0 });
+
+        const internalSetState = (change) => {
+          const changState = props.addReducer(index, change(index));
+          console.log(changState, "changState");
+          setIndex((prev) => ({ ...prev, ...changState }));
+        };
+
+        const handClick = () => {
+          internalSetState((state) => {
+            return {
+              type: "add",
+              index: index["index"] + 2
+            };
+          });
+        };
+
+        return <>{props.children({ index, handClick })}</>;
+      };
+
+      export default function App() {
+        return (
+          <div className="App">
+            <h1>Hello CodeSandbox</h1>
+            <h2>Start editing to see some magic happen!</h2>
+            <ChildrenComponent addReducer={addReducer}>
+              {({ index, handClick }) => {
+                console.log(index, handClick);
+                return <button onClick={handClick}>测试</button>;
+              }}
+            </ChildrenComponent>
+          </div>
+        );
+      }
     ```
   - Context：全局统一配置的最佳实践
     - [案例](https://github.com/imalextu/learn-react-patterns/blob/master/src/pattern4/Context.js)
