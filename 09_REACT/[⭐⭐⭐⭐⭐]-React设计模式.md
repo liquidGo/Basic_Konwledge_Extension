@@ -11,7 +11,14 @@
 - 常见的设计模式？
   - State Reducer：在状态更新前做一些逻辑
     - [案例](https://github.com/liquidGo/simply-react)
-  - Render Props：多测试用例的免Props判断的最佳实践
+  - Render Props：多用例(满足多个需求)组件的最佳实践
     - [案例](https://github.com/liquidGo/simply-react)
+    - 结合Reducer用法:
+    ```mermaid
+    flowchart TB
+      RenderProps--导出value/onChange(action)-->1[StateReducer]
+      1--有传入Reducer-->Reducer拦截并改变State进行更新
+      1--无传入Reducer-->直接更新默认的action到State
+    ```
   - Context：全局统一配置的最佳实践
     - [案例](https://github.com/imalextu/learn-react-patterns/blob/master/src/pattern4/Context.js)
