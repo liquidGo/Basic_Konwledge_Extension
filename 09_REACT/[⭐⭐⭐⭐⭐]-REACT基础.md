@@ -131,7 +131,7 @@ flowchart TB
 
          > hooks 是根据数组的顺序存储 state 的，如果在循环中使用，前置 useState 不调用会导致顺序混乱，无法确定当前的 hooks 是哪一个
 
-       - 为什么函数组件会执行两次？为了定位错误
+       - 为什么函数组件会执行两次？为了定位错误，原话是：根据我们的经验，render两次就可以让人们注意并修复渲染中副作用引起的问题。[issues跳转](https://github.com/facebook/react/issues/17786)
 
        - useEffect 两种情况:
          1. 传入空数组，只执行一次
