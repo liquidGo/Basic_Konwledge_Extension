@@ -18,7 +18,7 @@
     url.searchParams.set('age', 18)
     console.log(url.href) // https://www.baidu.com/?name=zhangsan&age=18
     ```
-  + 常用方法:
+  - 常用方法:
     - URL.searchParams: 返回一个 URLSearchParams 对象, 它允许对查询字符串进行读写操作
     - 属性:
       ```
