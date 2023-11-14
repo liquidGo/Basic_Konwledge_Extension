@@ -1,19 +1,18 @@
 ## http
 
 ### 导图
-```mermaid
-mindmap
-    http请求
-        请求手段
-            ajax
-            fetch
-            axios
-        请求方式
-            get
-            post
-        请求头响应头
-        token验证
-```
+- http请求
+- 请求手段
+  - ajax
+  - fetch
+  - axios
+- 请求方式
+  - get
+  - post
+- 请求头/请求体、响应头/响应体
+  - 如何设置缓存？
+- token验证
+
 
 ### 抽象
 #### 请求手段
@@ -64,7 +63,6 @@ service.interceptors.response.use(
   }
 )
 ```
-
 #### Jwt鉴权
 - 什么是JWT鉴权？
   - JWT全称JSON Web Token，是一种用于双方之间传递安全信息的简洁的、URL安全的表述性声明规范。
@@ -86,3 +84,4 @@ service.interceptors.response.use(
     5--下一次请求-->4
     5--token过期-->2
   ```
+
