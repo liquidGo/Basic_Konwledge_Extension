@@ -34,5 +34,5 @@
   - 长连接：[了解HTTP](../09_REACT/[⭐⭐⭐⭐⭐]-AbortController.md#总结)
   - 通过设置Connection:keep-alive来设置长连接。在HTTP1.1中自动设置类型为长连接。
 - HTTP ChangeLog
-  - HTTP1.1：长连接替代1.0短链接、Cache-control替代1.0Expires、Etag替代1.0Last-Modified
+  - HTTP1.1：长连接替代1.0短链接、Cache-control max-age替代1.0Expires、Etag替代1.0Last-Modified
   - HTTP2.0：多路复用（stream流式响应）、头部压缩
