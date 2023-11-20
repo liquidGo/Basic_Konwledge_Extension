@@ -75,3 +75,8 @@ ES6
 #### WeakMap/Map/Symbol
 - WeakMap
   - [WeakMap](../images/3b0f26c4d6a99177401edf448a7ff70a54096eb5b34ca70ff416e3ba33b00384.png)  
+- Map
+  - [Map](./[⭐⭐⭐]-交集并集差集.md#交集并集差集)
+- Symbol
+  - Symbol是一个唯一的值，他注册在Symbol注册表中，他不在栈中也不在堆中，使用垃圾回收机制。
+  - 
