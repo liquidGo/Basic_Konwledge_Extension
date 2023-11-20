@@ -141,7 +141,7 @@ flowchart TB
        - useMemo
          > 传入一个函数和依赖项，返回一个值，当依赖项发生变化时，重新计算值  
          > 比如一个对象，性别不改变，只改变姓名，可以监听姓名这个 state
-         > 场景：[未使用useMemo](../../images/9cfe3a0b1d81794b76d99659df2be72cda3e1e1a24f4939c821c89f0e496687e.png) [使用useMemo](../../images/ce86948d23f6de60f95c7f6799a83f3ea528379b9a44719cb9e333b8b7c9ba41.png)  
+         > 场景：[未使用useMemo](../images/9cfe3a0b1d81794b76d99659df2be72cda3e1e1a24f4939c821c89f0e496687e.png) [使用useMemo](../images/ce86948d23f6de60f95c7f6799a83f3ea528379b9a44719cb9e333b8b7c9ba41.png)  
 
        - useCallback
          > 前提是组件的 props/state 发生改变以后就会渲染整个组件，useCallback 就可以针对子组件的 reRender 进行优化，只有当依赖项发生改变时，才会重新渲染子组件，父组件中不相关的 state 发生变化也不会重新分配函数地址，配合 memo 使用。
