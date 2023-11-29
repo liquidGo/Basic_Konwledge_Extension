@@ -24,7 +24,7 @@
       ```
       const url = new URL('https://www.baidu.com/a?page=1');
       url.protocol // https:
-          url.host     // www.baidu.com
+      url.host     // www.baidu.com
       url.pathname // /a
       url.search   // ?page=1
       url.href     // https://www.baidu.com/a?page=1
