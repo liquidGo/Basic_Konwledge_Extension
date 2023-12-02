@@ -9,9 +9,10 @@
 - 什么是React设计模式？
   - 从开发的可复用性封装来说，React设计模式是一种封装可复用性组件的最佳实践，是一种组件的设计思想。
 - 常见的设计模式？
-  - State Reducer：在状态更新前做一些逻辑
+  > State Reducer：在改变值之前做一个判断触发哪些type拦截并作出指定值的改变。
     - [案例](https://github.com/liquidGo/simply-react)
-  - Render Props：多用例(满足多个需求)组件的最佳实践
+ 
+  > Render Props：多用例(满足多个需求)组件的最佳实践
     - [案例](https://github.com/liquidGo/simply-react)
     - 结合Reducer用法:
     ```mermaid
@@ -67,5 +68,13 @@
         );
       }
     ```
-  - Context：全局统一配置的最佳实践
-    - [案例](https://github.com/imalextu/learn-react-patterns/blob/master/src/pattern4/Context.js)
+  
+  > Prop Collections：RenderProps，返回公用的，children({value,onChange,...state})。
+
+
+  > Compound Components：复合组件，外层通过Context向下传值，类上的其他组件通过Context取值。
+
+  > Prop Getters：通过Prop Collections返回一个函数，通过这个函数对onClick做一些附加的函数调用，并且返回所有的Props。
+
+  Control Props：受控模式（外部操控内部数据源）
+

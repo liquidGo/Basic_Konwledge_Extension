@@ -44,3 +44,36 @@
 
 ### 算法
 - 基础算法[详解](../05_算法/[⭐⭐⭐⭐⭐]-四种基本的算法.md)
+
+### 防抖节流
+- 防抖：生效最后一次触发事件
+  ```
+  function debounce(fn,wait){
+    let timer = null;
+    return function(){
+      if(timer){
+        clearTimeout(timer)
+      }
+      timer = setTimeout(()=>{
+        fn.apply(this,arguments)
+      },wait)
+    }
+  }
+  ```
+- 节流：生效第一次触发事件
+  ```
+  function throttle(fn,wait){
+    let timer = null;
+    return function(){
+      if(!timer){
+        timer = setTimeout(()=>{
+          fn.apply(this,arguments)
+          timer = null;
+        },wait)
+      }
+    }
+  }
+  ```
+
+### 轮询
+- 轮询：每隔一段时间发送一次请求  [通过ids获取details](../images/f4dd13fd4b64bba0119299c18c3f4ebd3fe8a43a204649f9635c842aa23897eb.png)  
