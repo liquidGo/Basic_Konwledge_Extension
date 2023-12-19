@@ -34,7 +34,7 @@
 - GET和POST请求的区别
   - 安全性不同、传参方式不同、传参大小不同、缓存方式不同
 #### 拦截器
-```
+```js
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, 
   timeout: 15000, // request timeout

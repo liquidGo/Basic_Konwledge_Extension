@@ -14,7 +14,7 @@
 - 什么是AbortController？
   - AbortController是一个DOM API，主要用于中断请求，XMLHttpRequest支持中断请求，而fetch不支持，所以AbortController就是为了解决fetch/addEventListener监听器不支持中断请求的问题而出现的。
     - XMLHttpRequest：
-      ```
+      ```js
         let xhr = new XMLHttpRequest();
         xhr.method = 'GET';
         xhr.url = 'https://slowmo.glitch.me/5000';
@@ -26,7 +26,7 @@
         });
       ```
     - addEventListener：
-      ``` 
+      ``` js
         const controller = new AbortController();
         function callback (e) {
           document.addEventListener('mousemove',  (e) => {
@@ -40,7 +40,7 @@
 
       ```
     - fetch：
-      ```
+      ```js
         npm install @microsoft/fetch-event-source
         let controller = new AbortController() // 终止长连接的情况
         const eventSource = fetchEventSource(fetchUrl, {
@@ -74,7 +74,7 @@
 - 什么是长连接？什么是轮询？
   > [了解链接机制](http://www.bryh.cn/a/152599.html)
   - 长连接：在一个TCP连接上发送多个数据包
-    ```
+    ```html
       HTTP 长连接的特点是，只要任意一端没有明确提出断开连接，则保持 TCP 连接状态。
 
       怎么才能使用 HTTP 的 Keep-Alive 功能？
@@ -106,7 +106,7 @@
     - 什么是EventSource对象？和fetch接收stream的区别？
       - 举例两种方式：
         - EventSource：
-          ```
+          ```js
             var es = new EventSource(result.url, { withCredentials: true });
             es.onerror = function (event) {
                 //执行错误的页面逻辑
@@ -124,7 +124,7 @@
             }
           ```
         - fetch：
-          ```
+          ```js
             封装好的fetchEventSource：npm install @microsoft/fetch-event-source
             fetch(result.url, {
               method: 'POST',

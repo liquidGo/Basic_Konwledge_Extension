@@ -6,8 +6,8 @@
   1. Object.assign(target,source)=>target+source
 - 深拷贝
   1. JSON.parse(JSON.stringify(Object))
-  2. 
-    ```递归
+  2. 递归
+    ```js
     const cloneDeep = (obj) => {
       if (typeof obj !== 'object') {
         return obj;
@@ -47,7 +47,7 @@
 
 ### 防抖节流
 - 防抖：生效最后一次触发事件
-  ```
+  ```js
   function debounce(fn,wait){
     let timer = null;
     return function(){
@@ -61,7 +61,7 @@
   }
   ```
 - 节流：生效第一次触发事件
-  ```
+  ```js
   function throttle(fn,wait){
     let timer = null;
     return function(){
@@ -76,4 +76,4 @@
   ```
 
 ### 轮询
-- 轮询：每隔一段时间发送一次请求  [通过ids获取details](../images/f4dd13fd4b64bba0119299c18c3f4ebd3fe8a43a204649f9635c842aa23897eb.png)  
+- 轮询：每隔一段时间发送一次请求  [通过ids获取details](../06_HTTP/[⭐⭐⭐]-轮询.md#通过lists插入对应的detail值)  

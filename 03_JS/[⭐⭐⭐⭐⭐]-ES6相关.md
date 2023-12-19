@@ -33,7 +33,7 @@ Promise
 - 作用：拦截对象的读取、赋值、函数调用等操作
 - 语法：`let proxy = new Proxy(target, handler)`
 - 案例：  
-    ```
+    ```js
     let xiaohong = {
         name: "小红",
         age: 15

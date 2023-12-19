@@ -12,7 +12,7 @@
   - URL: 用于解析和构建 标准的 BASE URL
   - 解决问题: 解决拼接 URL 无意加入多余的空格或者参数不正确的问题
   - 使用方法:
-    ```
+    ```js
     const url=new URL('https://www.baidu.com')
     url.searchParams.set('name', 'zhangsan')
     url.searchParams.set('age', 18)
@@ -21,7 +21,7 @@
   - 常用方法:
     - URL.searchParams: 返回一个 URLSearchParams 对象, 它允许对查询字符串进行读写操作
     - 属性:
-      ```
+      ```js
       const url = new URL('https://www.baidu.com/a?page=1');
       url.protocol // https:
       url.host     // www.baidu.com
