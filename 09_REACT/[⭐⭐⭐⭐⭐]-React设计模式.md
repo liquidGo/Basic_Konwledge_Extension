@@ -22,7 +22,7 @@
       1--无传入Reducer-->直接更新默认的action到State
     ```
     - 简单小案例：RenderProps每次+2，Reducer当大于等于20的时候作出拦截逻辑
-    ```
+    ```JavaScript
       const addReducer = (state, action) => {
         switch (action.type) {
           case "add":
@@ -71,10 +71,9 @@
   
   > Prop Collections：RenderProps，返回公用的，children({value,onChange,...state})。    
 
-
-  > Compound Components：内-->内：复合组件，外层通过Context向下传值，类上的其他组件通过Context取值。    
-
   > Prop Getters：内-->外：通过Prop Collections返回一个函数，通过这个函数对onClick做一些附加的函数调用，并且返回所有的Props。    
+
+  > Compound Components：内-->内：复合组件，内从通过Context公用values，其他的复合组件通过Context取值。    
 
   > Control Props：外-->内：受控模式（外部操控内部数据源）
 
