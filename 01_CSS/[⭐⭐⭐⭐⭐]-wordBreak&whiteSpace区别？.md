@@ -4,6 +4,7 @@
 - word-break 与 white-space 的区别？
 - 如何超出文本换行？
 - 如何超出指定行以后再显示省略号？
+- 什么是display:-webkit-box;
 
 ### 提炼
 ```mermaid
@@ -19,3 +20,5 @@
   > text-overflow: ellipsis; overflow: hidden; white-space: nowrap;word-break: break-all;
 - 如何超出指定行以后再显示省略号？
   > -webkit-line-clamp: 2;display: -webkit-box;-webkit-box-orient: vertical;overflow: hidden;
+- 什么是display:-webkit-box;
+  > -webkit-box：是一种只兼容webkit内核的布局方式。
