@@ -11,7 +11,7 @@
 - try catch能捕获Promise的错误吗？
 
 ### 总结
-- 什么是Promise？来自于哪个ES版本？为什么有创造Promise？
+- 什么是Promise？来自于哪个ES版本？为什么要创造Promise？
   > Promise是ES6的一个新特性，用于解决回调地狱、链式调用、错误处理等问题。
 
 - Promise的状态有哪些？在Promise之前如何处理异步？
