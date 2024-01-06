@@ -63,3 +63,7 @@
 - 重绘：元素的属性发生改变并不会影响RenderTree中的布局，这时只会引起重绘。
 - 回流/重排：当元素的属性发生改变，RenderTree中布局、尺寸大小、隐藏的属性发生变化的时候就会引起重排。
 > 回流一定引起重绘，重绘不一定引起回流。
+
+#### 常用h5标签
+- header、nav、article、section、aside、footer
+  ![图 0](../images/6f2bf2e5064ae7db57ce402d8a7f1b8725ab414494335ea74b6bbe7bc4913057.png)  
