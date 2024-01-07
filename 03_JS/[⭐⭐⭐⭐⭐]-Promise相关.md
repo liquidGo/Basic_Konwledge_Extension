@@ -9,6 +9,7 @@
 - 手写一个简单的Promise？
 - Promise之前如何处理异步？
 - try catch能捕获Promise的错误吗？
+- return一个Promise的用处？
 
 ### 总结
 - 什么是Promise？来自于哪个ES版本？为什么要创造Promise？
@@ -40,4 +41,7 @@
 - try catch能捕获Promise的错误吗？
   > 不能，因为Promise的错误是异步的，try catch只能捕获同步的错误。
   > 但是，可以配合async/await 来捕获Promise的错误。
+
+- return一个Promise的用处？
+  > ![图 0](../images/ed4cf6cb5b623f69c415251f0e0b59bcfc7424fb787be6e88dfe1819abadc855.png)  
 
