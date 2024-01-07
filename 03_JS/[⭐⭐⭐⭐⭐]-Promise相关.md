@@ -45,3 +45,27 @@
 - return一个Promise的用处？
   > ![图 0](../images/ed4cf6cb5b623f69c415251f0e0b59bcfc7424fb787be6e88dfe1819abadc855.png)  
 
+- Promise优秀面试题？
+  ```js
+    const async1=async()=>{
+      console.log('async1');
+      setTimeout(() => {
+        console.log('timer1');
+      }, 2000);
+      await new Promise(r=>{
+        console.log('promise1');
+      })
+      return 'async1 success';
+    }
+    console.log('script start');
+    async1().then(res=>console.log(res))
+    console.log('script end');
+    Promise.resolve(1)
+      .then(2)
+      .then(Promise.resolve(3))
+      .catch(4)
+      .then(res=>console.log(res));
+    setTimeout(() => {
+        console.log('timer2');
+      }, 1000);
+  ```
