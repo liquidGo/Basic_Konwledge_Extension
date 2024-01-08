@@ -8,6 +8,7 @@
 - Promise的错误处理？
 - 手写一个简单的Promise？
 - Promise之前如何处理异步？
+- Promise.all和Promise.allSetlled/Promise.race的区别？
 - try catch能捕获Promise的错误吗？
 - return一个Promise的用处？
 
