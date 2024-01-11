@@ -11,6 +11,7 @@
 - Promise.all和Promise.allSetlled/Promise.race的区别？
 - try catch能捕获Promise的错误吗？
 - return一个Promise的用处？
+- 为什么async函数能使用.then方法？
 
 ### 总结
 - 什么是Promise？来自于哪个ES版本？为什么要创造Promise？
@@ -45,6 +46,11 @@
 
 - return一个Promise的用处？
   > ![图 0](../images/ed4cf6cb5b623f69c415251f0e0b59bcfc7424fb787be6e88dfe1819abadc855.png)  
+
+- 为什么async函数能使用.then方法？
+  > ![图 1](../images/a77df07e14ae1b016ada3dbd1ae9b3df0ac31b94210186b33bbcc40df1963b84.png)  
+  > async函数返回的是一个Promise对象，所以可以使用.then方法。但是如果没有使用resolve/reject，那么就会返回一个pending状态的Promise对象，不会向下执行，所以就不会执行.then方法。
+
 
 - Promise优秀面试题？
   ```js
