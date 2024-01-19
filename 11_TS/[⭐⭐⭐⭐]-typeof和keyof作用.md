@@ -9,5 +9,3 @@
   > keyof是用于获取对象的键值组成联合类型。    
     ![图 1](../../_component/images/5ac2dc81885633bb0858b62cdd62d81ebdd62150098ec3fa837d1d7c1d07afce.png)  
 
-
-1
