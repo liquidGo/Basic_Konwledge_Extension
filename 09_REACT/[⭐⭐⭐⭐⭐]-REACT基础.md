@@ -144,6 +144,7 @@ flowchart TB
          > 场景：[未使用useMemo](../images/9cfe3a0b1d81794b76d99659df2be72cda3e1e1a24f4939c821c89f0e496687e.png) [使用useMemo](../images/ce86948d23f6de60f95c7f6799a83f3ea528379b9a44719cb9e333b8b7c9ba41.png)  
 
        - useCallback  [demo](https://github.com/liquidGo/Abstract_Key_Processes/blob/master/src/other/useMemo%26useCallback/index.tsx)
+         > 使用debounce时，需要将函数地址进行缓存，否则每次都会重新分配函数地址，导致debounce失效，只是起到了延时触发的作用，并不是出发最后一次的作用。    
          > 前提是组件的 props/state 发生改变以后就会渲染整个组件，useCallback 就可以针对子组件的 reRender 进行优化，只有当依赖项发生改变时，才会重新渲染子组件，父组件中不相关的 state 发生变化也不会重新分配函数地址，配合 memo 使用。
          > 只有在父组件传给子组件的函数相关的变量发生改变的时候，才会去重新分配函数地址，否则不会重新分配函数地址。
 
