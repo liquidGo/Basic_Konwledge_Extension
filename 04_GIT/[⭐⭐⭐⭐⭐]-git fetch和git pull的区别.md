@@ -12,5 +12,9 @@
   - git pull：从远程仓库下载新分支与数据，并尝试合并到当前分支。
 
 - git merge和git rebase有什么区别？
-  - git merge：将两个或两个以上的分支合并到一个新的分支中。
-  - git rebase：将一个分支的修改合并到另一个分支中。
+  - git merge：相当于直接把master和curren branch合并成一个新的分支，新增一条commit记录。
+  - git rebase：相当于直接在master前面增加一个记录（变基）但是不会有commit记录。
+
+- 两者的优点和缺点？
+  > git merge增加了一条commit记录方便查看，但是会导致分支记录很多。    
+  > git rebase不会增加commit记录，但是出了问题不好查找。
