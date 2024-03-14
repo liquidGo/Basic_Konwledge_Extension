@@ -59,11 +59,11 @@ flowchart TD
 ```mermaid
 mindmap
     常用配置项：
-        mode：开发模式
-        entry：入口文件
-        output：出口文件
-        module：模块
-        plugins：插件
+        mode(核心：开发模式
+        entry(核心：入口文件
+        output(核心：出口文件
+        module(核心：模块
+        plugins(核心：插件
         devServer：开发服务器
         resolve：解析
         externals：外部扩展
