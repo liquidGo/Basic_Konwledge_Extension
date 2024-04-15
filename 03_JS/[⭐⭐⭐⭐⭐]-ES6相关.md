@@ -56,11 +56,7 @@ Promise
     proxyObj.age = "aa";
     ```
 
-#### Promise
 
-- 作用：解决异步回调地狱的问题[手写Promise](./[⭐⭐⭐⭐⭐]-异步.md#内置对象相关)
-- 方法：.then()、.catch()、.finally()、.race()、.all()等
-- 区别：promise.all和promise.race可用于处理多个promise实例，接收promise实例为元素的数组作为参数。用promise.all处理时，其中有一个promise实例失败，则返回最先失败的promise；所有promise成功则返回成功。用promise.race处理时，返回最先得出结果的promise的结果，不管此结果是成功还是失败。
 
 #### WeakMap/Map/Symbol
 - WeakMap

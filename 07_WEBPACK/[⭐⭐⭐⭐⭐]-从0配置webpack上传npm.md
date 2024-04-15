@@ -2,6 +2,7 @@
 ## 前期准备
 ### MindMap
 
+- init-awesome-cli@1.0.0
 - 核心包、插件是什么？
 - 通用化的方案是什么？
   - 如何支持移动端自动适配？
@@ -43,7 +44,7 @@ end
 timeline
 基础文件(基础文件): public/index.html<br>src/index.js: entry/output<br>文件路径设置: devserver本地服务器设置
 
-Plugins(更广泛的用处): html-webpack-plugin<br>（配置文件引入、多入口）: clean-webpack-plugin(删除原生产文件): postcss-pxtorem(响应式): lib-flexible(自动计算fontSize)
+Plugins(更广泛的用处): html-webpack-plugin<br>（配置文件引入、多入口）: clean-webpack-plugin(删除原生产文件): postcss-pxtorem(响应式): lib-flexible(自动计算fontSize): webpack-bundle-analyzer(性能分析)
 
 Loaders(处理非Js模块): css-loader<br>(引入.css文件)<br>style-loader<br>(使用style标签注入样式到html内): less-loader@6<br>(使用less文件): autoprefixer/postcss-loader<br>(自动添加浏览器前缀): webpack-merge(合并webpack.base.js<br>webpack.dev.js<br>webpack.prod.js): @babel/core<br>@babel/preset-env<br>core-js -s<br>babel-loader<br>处理ES6的js文件等<br>需要配置.babelrc和loader: file-loader(引入src下面的图片): typescript<br>ts-loader<br>@babel/preset-typescript<br>支持typescript<br>@types/react @types/react-dom -D支持类型验证
 
@@ -55,7 +56,7 @@ Loaders(处理非Js模块): css-loader<br>(引入.css文件)<br>style-loader<br>
 
 ### MindMap
 
-- bin文件夹下是可执行的入口文件灯
+- bin文件夹下是可执行的入口文件等
 - lib下是工具函数等
 - npm link测试cli工具是否可以使用
 - *#! /usr/bin/env node*

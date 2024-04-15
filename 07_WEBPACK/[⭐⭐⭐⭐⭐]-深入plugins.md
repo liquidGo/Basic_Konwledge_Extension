@@ -25,6 +25,3 @@ state plugins{
     - 比如postcss-loader，用于将css文件进行转换。
   - plugins：用途更加广泛，比如打包优化，资源管理，注入环境变量等。
     - 比如craco-less，可以在不eject的情况下，让create-react-app支持less。
-
-- 举例说明：
-  - 

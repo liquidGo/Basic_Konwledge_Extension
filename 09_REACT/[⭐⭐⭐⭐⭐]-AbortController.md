@@ -37,7 +37,7 @@
         }
         document.addEventListener('mousedown', callback);
         document.addEventListener('mouseup', controller.abort);
-
+      
       ```
     - fetch：
       ```js
@@ -70,25 +70,25 @@
         })
         }
       ```
-- 什么是fetch？[了解请求](../06_HTTP/[⭐⭐⭐⭐⭐]-HTTP请求.md#请求方式)
+- 什么是fetch？[了解请求](../06_HTTP/[⭐⭐⭐⭐⭐]-HTTP02_使用HTTP#请求方式)
 - 什么是长连接？什么是轮询？
   > [了解链接机制](http://www.bryh.cn/a/152599.html)
   - 长连接：在一个TCP连接上发送多个数据包
     ```html
       HTTP 长连接的特点是，只要任意一端没有明确提出断开连接，则保持 TCP 连接状态。
-
+    
       怎么才能使用 HTTP 的 Keep-Alive 功能？
       在 HTTP 1.0 中默认是关闭的，如果浏览器要开启 Keep-Alive，它必须在请求的包头中添加：
       Connection: Keep-Alive
       然后当服务器收到请求，作出回应的时候，它也添加一个头在响应中：
       Connection: Keep-Alive
       这样做，连接就不会中断，而是保持连接。当客户端发送另一个请求时，它会使用同一个连接。这一直继续到客户端或服务器端提出断开连接。
-
+    
       从 HTTP 1.1 开始， 就默认是开启了 Keep-Alive，如果要关闭 Keep-Alive，需要在 HTTP 请求的包头里添加：
       Connection:close
       现在大多数浏览器都默认是使用 HTTP/1.1，所以 Keep-Alive 都是默认打开的。一旦客户端和服务端达成协议，那么长连接就建立好了。
       所以，HTTP 长连接减少了 TCP 连接资源的开销。
-
+    
     ```
   - 如果使用了 HTTP 长连接，如果客户端完成一个 HTTP 请求后，就不再发起新的请求，此时这个 TCP 连接一直占用着不是挺浪费资源的吗？
     - 对没错，所以为了避免资源浪费的情况，web 服务软件一般都会提供 keepalive_timeout 参数，用来指定 HTTP 长连接的超时时间。
@@ -114,12 +114,12 @@
             }
             es.onmessage = function (event) {
                 //console.log(event.data);
-
+          
                 if (event.data == "[DONE]") {
                     //执行完成的页面逻辑
                     es.close();
                 }else{
-
+          
                 }
             }
           ```
@@ -136,32 +136,32 @@
               const reader = response.body.getReader();
               const decoder = new TextDecoder('utf-8');
               let buffer = '';
-
+          
               function processStreamResult(result2) {
                 const chunk = decoder.decode(result2.value, { stream: !result2.done });
                 buffer += chunk;
                 //逐条解析后端返回数据
                 const lines = buffer.split('\n');
                 buffer = lines.pop();
-
+          
                 lines.forEach(line => {
                   if (line.trim().length > 0) {
                     //console.log(line);
-
+          
                     if (line == 'data: [DONE]') {
                       //执行完成的页面逻辑
                     } else {
-
+          
                     }
-
+          
                   }
                 });
-
+          
                 if (!result2.done) {
                   return reader.read().then(processStreamResult);
                 }
               }
-
+          
               return reader.read().then(processStreamResult);
             })
               .catch(error => {

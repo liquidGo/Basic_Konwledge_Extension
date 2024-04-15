@@ -40,7 +40,7 @@
     ```
 
 ### Promise
-- 手写Promise [跳转](./[⭐⭐⭐⭐⭐]-异步.md#内置对象相关)
+- 手写Promise [跳转](./ECMAScript/[⭐⭐⭐⭐⭐]-ECMAScript-Promise.md#内置对象相关)
 
 ### 算法
 - 基础算法[详解](../05_算法/[⭐⭐⭐⭐⭐]-四种基本的算法.md)

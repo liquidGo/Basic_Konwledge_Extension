@@ -68,13 +68,13 @@ service.interceptors.response.use(
   - JWT全称JSON Web Token，是一种用于双方之间传递安全信息的简洁的、URL安全的表述性声明规范。
 - JWT实现流程？
   ```mermaid
-    flowchart TB
+  flowchart TB
     1[客户端发送用户名和密码]
     2[服务端验证用户名和密码]
       21[生成token]
       22[返回错误信息]
     3[客户端存储token]
-    4[客户端发送请求，interceptors请求头携带token到header的Authorization，前缀bearer]
+    4[客户端发送请求interceptors请求头携带token到header的Authorization前缀bearer]
     5[服务端验证token]
       51[返回数据]
       52[返回错误信息或者前端控制重新登录]
