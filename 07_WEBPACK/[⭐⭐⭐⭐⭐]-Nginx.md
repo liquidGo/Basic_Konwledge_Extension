@@ -62,5 +62,6 @@ end
 
 #### Nginx部署
 
-> [本地部署](https://blog.csdn.net/feng8403000/article/details/131618368)
-
+> [VMware安装centOs7](https://blog.csdn.net/feng8403000/article/details/131618368)
+> [centOs7安装Nginx](https://segmentfault.com/a/1190000018109309)
+> [xshell安装](https://www.jb51.net/softs/753107.html#downintro2)
