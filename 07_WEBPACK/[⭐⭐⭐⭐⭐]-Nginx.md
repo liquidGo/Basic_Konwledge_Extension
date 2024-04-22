@@ -65,3 +65,6 @@ end
 > [VMware安装centOs7](https://blog.csdn.net/feng8403000/article/details/131618368)
 > [centOs7安装Nginx](https://segmentfault.com/a/1190000018109309)
 > [xshell安装](https://www.jb51.net/softs/753107.html#downintro2)
+
+> [其他-1](https://segmentfault.com/a/1190000018109309)
+> [其他-2](https://blog.csdn.net/m0_52985087/article/details/132031312)
