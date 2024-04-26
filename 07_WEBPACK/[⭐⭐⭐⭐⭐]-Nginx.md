@@ -13,7 +13,7 @@
 
 
 
-### timeline
+### Timeline
 
 ```mermaid
 timeline
@@ -22,7 +22,7 @@ title Nginx
 功能: 代理: VMware配置centeOs: 负载均衡: 代码压缩: 跨域: 常用命令: 跨域处理: 重定向
 ```
 
-### stateDiagram
+### StateDiagram
 
 ```mermaid
 stateDiagram-v2
@@ -68,3 +68,32 @@ end
 
 > [其他-1](https://segmentfault.com/a/1190000018109309)
 > [其他-2](https://blog.csdn.net/m0_52985087/article/details/132031312)
+
+#### 卡点
+1. 403问题
+> [虚拟机设置等](https://blog.csdn.net/h18208975507/article/details/112462463)
+
+2. 常用命令
+```shell
+#!/bin/bash
+ 
+# 安装库
+yum install epel-release -y
+ 
+ 
+# 安装 Nginx
+yum install nginx -y
+ 
+# 启动 Nginx 服务
+systemctl start nginx
+ 
+# 关闭防火墙
+systemctl stop firewalld
+ 
+# 禁用防火墙
+systemctl disable firewalld
+ 
+# 设置 Nginx 开机自启动
+sudo systemctl enable nginx
+```
+
